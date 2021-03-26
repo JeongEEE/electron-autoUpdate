@@ -1,18 +1,19 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <span style="color:black;">{{packageJson.version}}</span>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import store from '@/store/index.js'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    
+  },
+  data: () => ({
+    packageJson: store.state.packageJson,
+  }),
 }
 </script>

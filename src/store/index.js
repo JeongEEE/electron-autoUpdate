@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    packageJson: JSON.parse(unescape(process.env.PACKAGE_JSON || null))
   },
   mutations: {
   },
