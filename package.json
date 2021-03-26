@@ -1,7 +1,10 @@
 {
   "name": "auto-update",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "description": "auto-update test app",
+  "private": false,
+  "license": null,
+  "author": "GyuJeong Kim, <gjkim@beyless.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,14 +12,23 @@
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:build-linux": "vue-cli-service electron:build --linux",
-    "electron:git": "vue-cli-service electron:build --linux -p always",
+    "electron:git": "vue-cli-service electron:build -p always",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeongEEE/electron-autoUpdate/"
+  },
+  "publish": {
+    "provider": "github",
+    "releaseType": "draft"
   },
   "main": "background.js",
   "dependencies": {
     "axios": "0.21.1",
     "core-js": "3.9.1",
+    "electron-updater": "4.3.8",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",

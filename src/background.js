@@ -16,6 +16,13 @@ app.commandLine.appendSwitch ( 'disable-features', 'OutOfBlinkCors');
 // gpu 랜더링 가속화 설정
 app.disableHardwareAcceleration();
 
+autoUpdater.setFeedURL({ 
+  provider: 'github', 
+  owner: process.env.OWNER, 
+  repo: process.env.REPO, 
+  token: process.env.JEONG_GH_TOKEN
+})
+
 async function createWindow() {
   const win = new BrowserWindow({
     width: 1400,
@@ -31,7 +38,7 @@ async function createWindow() {
   } else {
     createProtocol('app')
     win.loadURL('app://./index.html')
-    // autoUpdater.checkForUpdatesAndNotify();
+    autoUpdater.checkForUpdatesAndNotify();
   }
 }
 

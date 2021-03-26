@@ -13,11 +13,11 @@ module.exports = {
         artifactName: "auto-update.${ext}",
         publish: [{
           provider: "github",
-          owner: "JeondEEE",
-          repo: "electron-autoUpdate",
-          token: "7d10016797f3581b0c6a5abed9b7bddddeb9a0b1",
+          owner: process.env.OWNER,
+          repo: process.env.REPO,
+          token: process.env.JEONG_GH_TOKEN,
           private: false,
-          releaseType: 'release',
+          releaseType: 'draft',
           publishAutoUpdate: true
         }],
         linux: {
